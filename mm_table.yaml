@@ -1,0 +1,34 @@
+--- !ruby/object:MM_Table
+allMaps:
+  tmp.vue: !ruby/object:MM
+    file: "tmp.vue"
+    fileName: tmp.vue
+    dirPath: "./"
+    extn: ".vue"
+    mapTable: 
+    db: 
+    xml: 
+    mapDbId: 1
+    themes: {}
+    leafReadPagesInBook: 0
+    readPagesInBook: 0
+    pagesInBook: 0
+    allNodes: 
+    allNodesCount: 0
+    allRootNodes: 
+    wrappedLinks: 
+    allLinksCount: 0
+    mmInternalConf: 
+    lastEditDate:
+db: 
+allNodesSum: 0
+allRootNodesSum: 0
+allLinksSum: 0
+pagesInBooksSum: 0
+readPagesInBooksSum: 0
+leafReadPagesInBooksSum: 0
+logsPath: "./logs_mm_table.log"
+mmTableYamlDumpPath: "./mm_table.yaml"
+mmsLastEditsHash: 
+neo4jHelper: 
+allThemes:
