@@ -12,6 +12,7 @@ require 'rubygems'
 require 'gruff'
 require 'fileutils'
 require 'uri'
+require 'neo4j-core'
 
 require_relative "classes"
 

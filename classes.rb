@@ -9,6 +9,9 @@ require 'nokogiri'
 require 'sqlite3'
 require 'logger'
 require 'rubygems'
+require 'fileutils'
+require 'uri'
+require 'neo4j-core'
 class MM
 	attr_accessor :conf, :file, :fileName, :dirPath, :extn, :link, :linkShort, :themes, :pagesInBook, :readPagesInBook, :leafReadPagesInBook, :mapTable, :db, :mapDbId, :xml, :allNodes, :allNodesCount, :allRootNodes, :wrappedLinks, :mmInternalConf, :allLinksCount, :timelinesList, :lastEditDate
 	def initialize(file, mapTable, conf)
@@ -354,10 +357,6 @@ class MMWrappedLinks
 	   	connectedNodesIds
 	   end
 end
-require 'fileutils'
-require 'uri'
-require 'neo4j-core'
-require_relative 'classes'
 class MMInternalConf
 	   attr_accessor :confRootNodeXml, :confComment
 	   def initialize()
@@ -446,7 +445,7 @@ class ShowMMTable
 	end
 	def pageStyle()
 		"<style type='text/css'>\n" \
-		"#mmaps {border-collapse:collapse;width:2800px; margin: 10px 0 0 0;}\n" \
+		"#mmaps {border-collapse:collapse;width:2300px; margin: 10px 0 0 0;}\n" \
 		"body > table {border: 1px solid black;}\n" \
 		"body > table td, body > table th {border: 1px solid black;}\n" \
 		"td, th {padding: 0;font-size:14px;}\n" \
@@ -459,8 +458,14 @@ class ShowMMTable
 		".plansThemeLink {color:#0000ff;text-decoration:underline;cursor:pointer;}\n" \
 		".mmEditTimeline {color:#0000ff;text-decoration:none;cursor:pointer;}\n" \
 		"#editTime {width: 50px;}\n" \
-		"#nodesNumber {width: 30px;}\n" \
-		"#linksNumber {width: 30px;}\n" \
+		"#nodesNumber {width: 10px;}\n" \
+		"#linksNumber {width: 10px;}\n" \
+		"#mapNumber {width: 10px;}\n" \
+		"#mapName {width: 10px;}\n" \
+		"#pagesInBookCountNumber {width: 10px;}\n" \
+		"#readPagesInBookCountNumber {width: 10px;}\n" \
+		"#leafReadPagesInBookCountNumber {width: 10px;}\n" \
+		"#nonReadPagesNumber {width: 10px;}\n" \
 		"</style>\n"
 	end
 	def pageJSScripts()
@@ -558,9 +563,9 @@ class ShowMMTable
 		line += "<td class='editTime' style='font-size:9px;line-height:80%;'><a class='mmEditTimeline' href='mmEditTimeline?mmFileName=#{k}' target='_blank'>" + v.lastEditDate.to_s + "</a></td>"
 		#line += v.themesAndBlocksTableLine(@mt.listAllThemesFromDB)
 		line += "<td class='commentsCol' style='font-size:9px;width:200px;'>" + v.mmInternalConf.confComment + "</td>"
-		line += "<td style='font-size:9px;'>#{index+1}</td>"
+		line += "<td style='font-size:9px;width:10px'>#{index+1}</td>"
 		line += "<td>" + v.linkShort+ "</td>"
-		line += "<td style='font-size:9px;'>"+v.allRootNodes.size.to_s + "</td>"
+		line += "<td style='font-size:9px;width:10px'>"+v.allRootNodes.size.to_s + "</td>"
 		line += "<td class='lastRoots' mapFile='#{v.file}'>"+ "</td>"
 		line += "<td style='border-bottom:2px solid black;'>"+v.allRootNodesLabelsWithColumns() + "</td>"
 		line += "</tr>" + "\n"
