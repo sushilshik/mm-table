@@ -1,6 +1,7 @@
 # mm-table
 
-Setup mm-table:
+
+##Setup mm-table:
 
 1) dnf install sqlite ruby ruby-devel rubygem-nokogiri rubygem-gruff rubygem-sqlite3 rubygem-sinatra rubygem-json
 
@@ -8,21 +9,21 @@ Setup mm-table:
 
 3) Установка neo4j
 
-	3.1 Скачать с https://neo4j.com/download/other-releases/ файл базы neo4j-community-2.*-unix.tar.gz
-
-	3.2 распаковать
-
-	3.3 переименовать в neo4j
-
-	3.4 скопировать в mm-table/
-
-	3.5 в файле neo4j/conf/neo4j-server.properties параметру dbms.security.auth_enabled задайте значение false
+  3.1 Скачать с https://neo4j.com/download/other-releases/ файл базы neo4j-community-2.\*-unix.tar.gz
+  
+  3.2 распаковать
+  
+  3.3 переименовать в neo4j
+  
+  3.4 скопировать в mm-table/
+  
+  3.5 в файле neo4j/conf/neo4j-server.properties параметру dbms.security.auth_enabled задайте значение false
 
 4) Поместить файл VUE.jar в директорию mm-table
 
 
 
-Запуск mm-table:
+##Запуск mm-table:
 
 1) ruby server.rb
 
@@ -33,7 +34,7 @@ Setup mm-table:
 
 
 
-Патчим VUE
+##Патчим VUE
 
 1) Скачиваем VUE
 git clone https://github.com/VUE/VUE.git
@@ -64,8 +65,11 @@ ant jar
 10) копируем файл VUE.jar в mm-table/
 
 
-Связь:
+
+##Связь:
 
 http://sushilshik.livejournal.com/
+
 http://www.facebook.com/mike.ahundov
+
 http://vk.com/ahundov
