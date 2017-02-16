@@ -37,25 +37,33 @@
 ##Патчим VUE
 
 1) Скачиваем VUE
+
 git clone https://github.com/VUE/VUE.git
 
 2) Достаем тэг 3.2.2
+
 git checkout tags/3.2.2
 
 3) Создаем рабочую ветку
+
 git checkout -b 3.2.2-work
 
 4) Скачиваем патч 
+
 http://nkbtr.org/down/coordinates_parameters.patch.zip
 
 5) Распаковываем
+
 unzip coordinates_parameters.patch.zip
 
 6) Патчим
+
 git apply coordinates_parameters.patch
 
 7) Собираем
+
 ant compile
+
 ant jar
 
 8) Итоговый файл в VUE/VUE2/src/build/
